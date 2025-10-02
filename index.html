@@ -37,8 +37,8 @@
             margin-bottom: 20px;
         }
         .logo-placeholder {
-            width: 70px; /* Ajusta el tamaño según tu logo */
-            height: 70px;
+            width: 100px; /* Ajusta el tamaño según tu logo */
+            height: 100px;
             flex-shrink: 0; /* Evita que el logo se encoja */
         }
         .logo-placeholder img {
@@ -54,31 +54,27 @@
             gap: 15px;
         }
         .main-title-wrapper {
-            position: relative; /* Contenedor para posicionar el subtítulo */
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
         }
         .main-name {
-            font-size: 2.8em; /* Tamaño base para "l Cond" */
+            font-size: 4.5em; /* Tamaño grande y limpio */
             font-weight: bold;
             margin: 0;
-            line-height: 1;
-            letter-spacing: 2px; /* Estira el texto para acercarse al logo */
-        }
-        .main-name .large-e {
-            font-size: 2.5em; /* Tamaño de las 'E' relativo al texto principal */
-            vertical-align: middle; /* Alinea las 'E' con el texto */
+            letter-spacing: 2px;
         }
         .subtitle {
-            position: absolute;
-            bottom: 12px; /* Lo sube un poquito */
-            left: 0;
-            right: 0;
-            font-size: 0.4em; /* Un poco más grande */
+            font-size: 1.2em; /* Más grande para mejor visibilidad */
             font-weight: 600;
             color: #f0f0f0;
             margin: 0;
-            letter-spacing: 1px; /* Un poco de espacio entre letras */
+            letter-spacing: 4px; /* Estiramos el texto */
             text-transform: uppercase; /* Mayúsculas para estilo */
+            width: 100%;
+            text-align: center;
         }
         strong {
             color: #FACC15; /* Resalta los textos importantes con el color de la marca */
@@ -99,26 +95,29 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        /* --- Estilo Tarjetas de Especialidades --- */
+        /* --- Estilo Lista de Especialidades --- */
         .specialties-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-        .specialty-card {
-            background-color: #222;
-            border: 1px solid #444;
-            padding: 8px 15px;
-            border-radius: 20px;
+        .specialty-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-left: 3px solid #FACC15;
+        }
+        .specialty-item h4 {
+            margin: 0 0 10px 0;
+            color: #FACC15;
+            font-size: 1.1em;
+        }
+        .specialty-item p {
+            margin: 0;
             font-size: 0.9em;
-            font-weight: 500;
-            transition: background-color 0.2s, color 0.2s;
+            color: #ccc;
         }
-        .specialty-card:hover {
-            background-color: #FACC15;
-            border-color: #FACC15;
-            color: #1a1a1a;
+        .specialty-item p strong {
+            color: #f0f0f0;
         }
         /* --- Estilo Contacto y Dirección --- */
         .contact-info-grid {
@@ -131,9 +130,10 @@
             text-align: center;
         }
         .divider-line {
-            width: 1px;
-            height: 100px;
+            width: 2px;
+            height: 100%;
             background-color: #444;
+            border-radius: 1px;
         }
         .contact-col p {
             margin: 5px 0;
@@ -149,14 +149,19 @@
         .delivery-icons {
             margin-top: 15px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
             align-items: center;
         }
-        .delivery-icons img {
-            height: 35px;
-            filter: grayscale(1) brightness(1.2); /* Iconos en blanco y negro */
-            transition: filter 0.3s ease;
+        .platform-button {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
         .social-icons img {
             width: 30px;
@@ -167,27 +172,18 @@
         .social-icons a:hover img {
             transform: scale(1.1);
         }
-        .delivery-icons a:hover img {
-            filter: none; /* Muestra el color original al pasar el mouse */
+        .platform-button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
-        .payment-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            align-items: center;
-        }
-        .payment-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #333;
-            padding: 5px 12px;
-            border-radius: 5px;
-            font-weight: 500;
-        }
-        .payment-item img {
-            height: 20px;
+        .instagram-btn { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+        .facebook-btn { background: #1877F2; }
+        .rappi-btn { background: #FF5A00; }
+        .pedidosya-btn { background: #E50000; }
+
+        .payment-list p {
+            margin: 4px 0;
+            font-size: 1.1em;
         }
         .qr-section {
             text-align: center;
@@ -206,8 +202,9 @@
         }
 
         .image-gallery {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
             gap: 10px;
             margin-top: 20px;
         }
@@ -226,6 +223,85 @@
         .flyer-side h2 {
             text-align: center;
         }
+
+        /* --- Estilos para el Menú --- */
+        .menu-category {
+            margin-bottom: 20px;
+        }
+        .menu-category h3 {
+            color: #FACC15;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .menu-category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #444;
+        }
+        .menu-category-header h3 {
+            border-bottom: none;
+            margin-bottom: 0;
+            white-space: nowrap; /* Evita que el título se rompa en dos líneas */
+        }
+        .size-headers {
+            display: grid;
+            gap: 4px 10px;
+            font-weight: bold;
+            color: #FACC15;
+            text-align: right; /* Alinea los títulos de tamaño a la derecha de su celda */
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0 20px; /* Espacio solo entre columnas */
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 4px 0;
+            border-bottom: 1px dotted #333;
+        }
+        .menu-item-name {
+            font-weight: 600;
+            color: #f0f0f0;
+            margin-right: 10px;
+        }
+        .menu-item-price {
+            font-weight: bold;
+            color: #FACC15;
+            white-space: nowrap;
+        }
+        .menu-item-size {
+            font-size: 0.8em;
+            color: #999;
+            margin-left: 5px;
+        }
+        .agregado {
+            font-size: 0.8em;
+            color: #ccc;
+        }
+
+        /* --- Estilos para el Menú con Tabla de Precios --- */
+        .menu-price-table {
+            display: grid;
+            /* Ajustar columnas: Nombre, Precio1, Precio2, Precio3... */
+            gap: 4px 10px; /* row-gap column-gap */
+            align-items: baseline;
+        }
+        .menu-price-table > span {
+            padding-bottom: 4px;
+        }
+        .table-item-name {
+            font-weight: 600;
+            border-bottom: 1px dotted #333;
+        }
+        .table-price {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -241,63 +317,165 @@
                     <img src="Logo-Conde10.png" alt="Logo El Conde">
                 </div>
                 <div class="main-title-wrapper">
-                    <h1 class="main-name">
-                        <span class="large-e">E</span>l Cond<span class="large-e">e</span>
-                    </h1>
+                    <h1 class="main-name">El Conde</h1>
                     <p class="subtitle">Pizzas y Empanadas</p>
                 </div>
             </div>
         </header>
-        <div class="promo">10% de descuento pagando en efectivo</div>
+        <div class="promo">10% de descuento pagando en Efectivo</div>
 
         <div class="section">
             <h2>Nuestras Especialidades</h2>
             <div class="specialties-grid">
-                <span class="specialty-card">Pizzas</span>
-                <span class="specialty-card">Empanadas</span>
-                <span class="specialty-card">Calzones</span>
-                <span class="specialty-card">Fugazzetas Rellenas</span>
-                <span class="specialty-card">Hamburguesas</span>
-                <span class="specialty-card">Sandwiches</span>
-                <span class="specialty-card">Minutas</span>
-                <span class="specialty-card">Pastas y Tartas</span>
+                <div class="specialty-item"><h4>Pizzas</h4><p><strong>Tamaños:</strong> Grande - Chica - Individual</p></div>
+                <div class="specialty-item"><h4>Empanadas</h4><p><strong>Variedad:</strong> Clásicas y Especiales</p></div>
+                <div class="specialty-item"><h4>Fugazzetas Rellenas</h4><p><strong>Tamaños:</strong> Chica y Grande</p></div>
+                <div class="specialty-item"><h4>Hamburguesas</h4><p><strong>Opciones:</strong> Sola - Mix - Completa</p></div>
+                <div class="specialty-item"><h4>Sandwiches</h4><p><strong>Carne o Pollo</strong> (20cm o 30cm)</p></div>
+                <div class="specialty-item"><h4>Minutas</h4><p>Mila/Napo p/1 o p/2 + Guarnición</p></div>
+                <div class="specialty-item"><h4>Tortillas y Tartas</h4><p>Mix de Variedades</p></div>
+                <div class="specialty-item"><h4>Calzones</h4><p>Mix de Variedades</p></div>
             </div>
         </div>
 
         <div class="section">
-            <h3>Contacto y Dirección</h3>
             <div class="contact-info-grid">
                 <div class="contact-col">
-                    <p><strong>Dirección</strong><br>Gral Lucio N. Mansilla 2782</p>
-                </div>
-                <div class="divider-line"></div>
-                <div class="contact-col">
+                    <h3>Contacto y Dirección</h3>
+                    <!-- Icono de ubicación SVG incrustado -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#FACC15" style="margin-bottom: 5px;">
+                        <path d="M12 2C7.589 2 4 5.589 4 10c0 6.5 8 12 8 12s8-5.5 8-12c0-4.411-3.589-8-8-8zm0 12c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
+                    </svg>
+                    <p style="margin-top: 0;">Gral Lucio N. Mansilla 2782</p>
                     <p><strong>Teléfono:</strong> 4962-1300 / 1900</p>
                     <p><strong>WhatsApp:</strong> +11-6048-6366</p>
                 </div>
+                <div class="divider-line"></div>
+                <div class="contact-col">
+                    <h3>Medios de Pago</h3>
+                    <div class="payment-list">
+                        <p>💵 Efectivo</p>
+                        <p>💳 Tarjetas de Crédito y Débito</p>
+                        <p>📲 Mercado Pago</p>
+                        <p>🏦 Transferencia Bancaria</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="payment-methods section">
-            <h3>Medios de Pago</h3>
-            <div class="payment-icons">
-                <div class="payment-item">
-                    <img src="https://www.svgrepo.com/show/498982/cash.svg" alt="Efectivo">
-                    <span>Efectivo</span>
-                </div>
-                <div class="payment-item">
-                    <img src="https://www.svgrepo.com/show/499136/transfer.svg" alt="Transferencia">
-                    <span>Transferencia</span>
-                </div>
-                <div class="payment-item">
-                    <img src="https://www.svgrepo.com/show/303202/mercado-pago-logo.svg" alt="Mercado Pago">
-                    <span>Mercado Pago</span>
-                </div>
-                <div class="payment-item">
-                    <img src="https://www.svgrepo.com/show/498993/card.svg" alt="Tarjetas">
-                    <span>Tarjetas</span>
+    <!-- CENTRO DEL VOLANTE - LADO 1 -->
+    <div class="flyer-side">
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <h3>Pizzas</h3>
+                <div class="size-headers" style="grid-template-columns: 2.35fr 1fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
+                    <span></span><span>Grande</span><span>Chica</span><span>Indiv.</span>
                 </div>
             </div>
+            <div class="menu-price-table" style="grid-template-columns: 2.35fr 1fr 1fr 1fr; margin-top: 10px;">
+                <span class="table-item-name">Muzzarella</span> <span class="table-price">$16500</span> <span class="table-price">$14700</span> <span class="table-price">$11400</span>
+                <span class="table-item-name">Fugazza Con Queso</span> <span class="table-price">$16500</span> <span class="table-price">$14700</span> <span class="table-price">$11400</span>
+                <span class="table-item-name">Jamon</span> <span class="table-price">$18300</span> <span class="table-price">$16300</span> <span class="table-price">$13200</span>
+                <span class="table-item-name">Jamon y Morrones</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
+                <span class="table-item-name">Jamon Crudo</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
+                <span class="table-item-name">Rucula y Parmesano</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
+                <span class="table-item-name">Calabresa</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
+                <span class="table-item-name">Provolone</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
+                <span class="table-item-name">Roquefort</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
+                <span class="table-item-name">Tres Quesos</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16700</span>
+                <span class="table-item-name">Margarita</span> <span class="table-price">$20200</span> <span class="table-price">$17900</span> <span class="table-price">$14700</span>
+                <span class="table-item-name">Napolitana</span> <span class="table-price">$20200</span> <span class="table-price">$17900</span> <span class="table-price">$14700</span>
+                <span class="table-item-name">Super Napolitana</span> <span class="table-price">$24000</span> <span class="table-price">$21300</span> <span class="table-price">$17400</span>
+                <span class="table-item-name">El Conde</span> <span class="table-price">$25400</span> <span class="table-price">$22300</span> <span class="table-price">$18100</span>
+                <span class="table-item-name">Palmito</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16700</span>
+                <span class="table-item-name">Criolla</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16500</span>
+                <span class="table-item-name">Champignones</span> <span class="table-price">$22700</span> <span class="table-price">$18300</span> <span class="table-price">$16500</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Empanadas</h3>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item"><span class="menu-item-name">Carne Suave</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Carne Picante</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Pollo</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Roquefort</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Cebolla y Queso</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Humita</span> <span class="menu-item-price">$2400</span></div>
+                </div>
+                <div>
+                    <div class="menu-item"><span class="menu-item-name">Verdura</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Capresse</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Jamon y Queso</span> <span class="menu-item-price">$2400</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Carne a Cuchillo<span class="menu-item-size">(Suave/Picante)</span></span> <span class="menu-item-price">$2600</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Fatay</span> <span class="menu-item-price">$2600</span></div>
+                    <div class="menu-item"><span class="menu-item-name">Pollo al Verdeo</span> <span class="menu-item-price">$2600</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CENTRO DEL VOLANTE - LADO 2 -->
+    <div class="flyer-side">
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <h3>Fugazzetas Rellenas</h3>
+                <div class="size-headers" style="grid-template-columns: 2.9fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
+                    <span></span><span>Grande</span><span>Chica</span>
+                </div>
+            </div>
+            <div class="menu-price-table" style="grid-template-columns: 2.9fr 1fr 1fr; margin-top: 10px;">
+                <span class="table-item-name">Clasica</span> <span class="table-price">$21200</span> <span class="table-price">$19700</span>
+                <span class="table-item-name">Con Jamon</span> <span class="table-price">$24000</span> <span class="table-price">$22300</span>
+                <span class="table-item-name">Con Jamon y Morrones</span> <span class="table-price">$25800</span> <span class="table-price">$24400</span>
+                <span class="table-item-name">Completa (+ Huevo)</span> <span class="table-price">$26900</span> <span class="table-price">$25400</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Calzones</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-item-name">Calzon Napolitano</span> <span class="menu-item-price">$25300</span></div>
+                <div class="menu-item"><span class="menu-item-name">Calzon Calabresa</span> <span class="menu-item-price">$25300</span></div>
+                <div class="menu-item"><span class="menu-item-name">Calzon Champignones</span> <span class="menu-item-price">$25300</span></div>
+                <div class="menu-item"><span class="menu-item-name">Calzon El Conde</span> <span class="menu-item-price">$27200</span></div>
+            </div>
+        </div>
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <h3>Sandwiches</h3>
+                <div class="size-headers" style="grid-template-columns: 2.7fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
+                    <span></span><span>20CM</span><span>30CM</span>
+                </div>
+            </div>
+            <div class="menu-price-table" style="grid-template-columns: 2.7fr 1fr 1fr; margin-top: 10px;">
+                <span class="table-item-name">Milanesa Carne / Pollo</span> <span class="table-price">$9800</span> <span class="table-price">$11800</span>
+                <span class="table-item-name">Churrasquito / Pollo Grille</span> <span class="table-price">$9800</span> <span class="table-price">$11800</span>
+                <span class="table-item-name">Completo <span class="agregado">(L,T,J,Q)</span></span> <span class="table-price">$11800</span> <span class="table-price">$13700</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <div class="menu-category-header">
+                <h3>Minutas</h3>
+                <div class="size-headers" style="grid-template-columns: 2.7fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
+                    <span></span><span>Para 1</span><span>Para 2</span>
+                </div>
+            </div>
+            <div class="menu-price-table" style="grid-template-columns: 2.7fr 1fr 1fr; margin-top: 10px;">
+                <span class="table-item-name">Milanesa Sola <span class="agregado">(Carne/Pollo)</span></span> <span class="table-price">$14000</span> <span class="table-price">$18000</span>
+                <span class="table-item-name">Milanesa Napolitana</span> <span class="table-price">$17200</span> <span class="table-price">$22100</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Hamburguesas</h3>
+            <div class="menu-item"><span class="menu-item-name">Hamburguesa Sola</span> <span class="menu-item-price">$7200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Hamburguesa L y T / J y Q</span> <span class="menu-item-price">$8700</span></div>
+            <div class="menu-item"><span class="menu-item-name">Hamburguesa Completa</span> <span class="menu-item-price">$9500</span></div>
+            <div class="menu-item"><span class="menu-item-name">Adicionales</span> <span class="menu-item-price">$1300</span></div>
+        </div>
+        <div class="promo" style="margin-top: 20px;">
+            ¡Mirá todas las promos y nuestros productos en nuestra Web!
+            <strong><a href="https://elconde.lat/" target="_blank" style="color: #1a1a1a; text-decoration: none;">https://elconde.lat/</a></strong>
         </div>
     </div>
 
@@ -307,19 +485,19 @@
         <p>Visita nuestro sitio para ver el menú completo, hacer tu pedido online, consultar promos vigentes y recibirlo en tu casa o retirarlo en el local.</p>
 
         <div class="qr-section">
-            <h3>Escaneá el QR con la cámara de tu celu</h3>
+            <h3>Escaneá el QR y disfruta de lo mejor del Condado
             <div class="qr-code">
                 <!-- Aquí va tu imagen QR -->
-                <img src="qr-elconde.png" alt="Código QR para pedir online">
+                <img src="qrticket.jpeg"Código QR para pedir online">
             </div>
         </div>
 
         <div class="promo">
-            ¡Consultá nuestras promos exclusivas online!
+            ¡Proximamente! Suma puntos Conde y Disfruta de nuestros veneficios.
         </div>
 
         <div class="section">
-            <h2>Para ir abriendo el apetito...</h2>
+            <h2>Nuestros destacados con mejores calificasiones</h2>
             <div class="image-gallery">
                 <!-- Reemplaza con tus fotos -->
                 <div>
@@ -331,17 +509,26 @@
                 <div>
                     <img src="CALABRESSA.jpeg" alt="Foto de Pizza Calabressa">
                 </div>
+                <!-- Nuevas imágenes -->
+                <div>
+                    <img src="CHURRASQUITO.jpeg"Foto de producto 4">
+                </div>
+                <div>
+                    <img src="SUPER-NAPOLITANA.jpeg"Foto de producto 5">
+                </div>
+                <div>
+                    <img src="HAMBURGUESA COMPLETA.jpg"Foto de producto 6">
+                </div>
             </div>
         </div>
         <div class="hours section">
             <h3>Nuestros Horarios</h3>
             <p>Miércoles a Lunes: <strong>19:30 a 23:45 hs</strong> (Martes cerrado)</p>
             <div class="delivery-icons">
-                <a href="https://www.instagram.com/elconde.pizzas/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/elconde.pizzas" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
-                <!-- Iconos de Rappi y PedidosYa (versión en blanco) -->
-                <a href="#" target="_blank"><img src="https://logodownload.org/wp-content/uploads/2019/05/rappi-logo-2.png" alt="Rappi"></a>
-                <a href="#" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/PedidosYa_Logo.svg/1280px-PedidosYa_Logo.svg.png" alt="PedidosYa"></a>
+                <a href="https://www.instagram.com/elconde.pizzas/" target="_blank" class="platform-button instagram-btn">Instagram</a>
+                <a href="https://www.facebook.com/elconde.pizzas" target="_blank" class="platform-button facebook-btn">Facebook</a>
+                <a href="#" target="_blank" class="platform-button rappi-btn">Rappi</a>
+                <a href="#" target="_blank" class="platform-button pedidosya-btn">PedidosYa</a>
             </div>
         </div>
     </div>
