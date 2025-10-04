@@ -104,8 +104,12 @@
         .specialty-item {
             background-color: #1a1a1a;
             padding: 15px;
-            border-left: 3px solid #FACC15;
+            /* border-left: 3px solid #FACC15; */ /* Reemplazado por el nuevo estilo de promo */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
         .specialty-item h4 {
             margin: 0 0 10px 0;
             color: #FACC15;
@@ -114,6 +118,10 @@
         .specialty-item p {
             margin: 0;
             font-size: 0.9em;
+            color: #ccc;
+        }
+        .promo-item .promo-details {
+            font-size: 0.8em;
             color: #ccc;
         }
         .specialty-item p strong {
@@ -302,6 +310,28 @@
         .table-price {
             text-align: right;
         }
+        /* --- Nuevos estilos para las promociones --- */
+        .promo-item {
+            background-color: #1a1a1a;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #444;
+            border-radius: 8px;
+        }
+        .promo-item h4 {
+            color: #FACC15;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .promo-price {
+            display: inline-block;
+            border: 2px solid #FACC15;
+            color: #FACC15;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 30px; /* Bordes redondeados para efecto de botón/píldora */
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -322,22 +352,101 @@
                 </div>
             </div>
         </header>
-        <div class="promo">10% de descuento pagando en Efectivo</div>
 
         <div class="section">
-            <h2>Nuestras Especialidades</h2>
+            <h2>Nuestras Promociones</h2>
             <div class="specialties-grid">
-                <div class="specialty-item"><h4>Pizzas</h4><p><strong>Tamaños:</strong> Grande - Chica - Individual</p></div>
-                <div class="specialty-item"><h4>Empanadas</h4><p><strong>Variedad:</strong> Clásicas y Especiales</p></div>
-                <div class="specialty-item"><h4>Fugazzetas Rellenas</h4><p><strong>Tamaños:</strong> Chica y Grande</p></div>
-                <div class="specialty-item"><h4>Hamburguesas</h4><p><strong>Opciones:</strong> Sola - Mix - Completa</p></div>
-                <div class="specialty-item"><h4>Sandwiches</h4><p><strong>Carne o Pollo</strong> (20cm o 30cm)</p></div>
-                <div class="specialty-item"><h4>Minutas</h4><p>Mila/Napo p/1 o p/2 + Guarnición</p></div>
-                <div class="specialty-item"><h4>Tortillas y Tartas</h4><p>Mix de Variedades</p></div>
-                <div class="specialty-item"><h4>Calzones</h4><p>Mix de Variedades</p></div>
+                <div class="promo-item">
+                    <h4>PROMO 1</h4>
+                    <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + 🥤Bebida 1.50L</p>
+                    <div class="promo-price">$26500</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 2</h4>
+                    <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + Bebida 1.50L</p>
+                    <div class="promo-price">$31000</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 3</h4>
+                    <p>Pizza Grande Muzzarella + Pizza Chica De Fugazza con Queso + Bebida de 1.50L</p>
+                    <div class="promo-price">$31700</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 4</h4>
+                    <p>Pizza Grande de Napo o Jamón + 4 Empanadas + 2 Fainá + Bebida 1.50L</p>
+                    <div class="promo-price">$34400</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 5</h4><p>Milanesa grande de Pollo o Carne a la Napolitana + Papas fritas grandes + Pan de pizza</p>
+                    <div class="promo-price">$24300</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 6</h4>
+                    <p>2 Sandwiches completos de 20cm + Papas fritas grandes</p>
+                    <div class="promo-price">$28200</div>
+                </div>
+                <div class="promo-item">
+                    <h4>PROMO 7</h4>
+                    <p>2 Hamburguesas completas + Papas fritas grandes</p>
+                    <div class="promo-price">$20200</div>
+                </div>
+                <div class="promo-item">
+                    <h4>DOCENA</h4>
+                    <p>12 Empanadas Tradicionales</p>
+                    <p class="promo-details">(gustos especiales + $200 c/u)</p>
+                    <div class="promo-price">$26400</div>
+                </div>
             </div>
         </div>
 
+        <div class="promo" style="margin-top: 20px;">
+            ¡Mirá todas las promos y nuestros productos en nuestra Web!<br>
+            <strong><a href="https://elconde.lat/" target="_blank" style="color: #1a1a1a; text-decoration: none;">https://elconde.lat/</a></strong>
+        </div>
+    </div>
+
+    <!-- REVERSO DEL VOLANTE -->
+    <div class="flyer-side">
+        <h2 style="font-size: 1.6em;">¡Pedí online fácil y rápido!</h2>
+        <p>Visita nuestro sitio para ver el menú completo, hacer tu pedido online, consultar promos vigentes y recibirlo en tu casa o retirarlo en el local.</p>
+
+        <div class="qr-section">
+            <h3>Escaneá el QR y disfruta de lo mejor del Condado
+            <div class="qr-code">
+                <!-- Aquí va tu imagen QR -->
+                <img src="qrticket.jpeg"Código QR para pedir online">
+            </div>
+        </div>
+
+        <div class="promo">
+            ¡Proximamente! Suma puntos Conde y Disfruta de nuestros veneficios.
+        </div>
+
+        <div class="section">
+            <h2>Destacados Con Mejor Calificasion</h2>
+            <div class="image-gallery">
+                <!-- Reemplaza con tus fotos -->
+                <div>
+                    <img src="milanesa-de-carne-completa.jpeg" alt="Foto de Milanesa">
+                </div>
+                <div>
+                    <img src="CRIOLLA.jpg" alt="Foto de empanadas">
+                </div>
+                <div>
+                    <img src="CALABRESSA.jpeg" alt="Foto de Pizza Calabressa">
+                </div>
+                <!-- Nuevas imágenes -->
+                <div>
+                    <img src="CHURRASQUITO.jpeg"Foto de producto 4">
+                </div>
+                <div>
+                    <img src="SUPER-NAPOLITANA.jpeg"Foto de producto 5">
+                </div>
+                <div>
+                    <img src="HAMBURGUESA COMPLETA.jpg"Foto de producto 6">
+                </div>
+            </div>
+        </div>
         <div class="section">
             <div class="contact-info-grid">
                 <div class="contact-col">
@@ -359,165 +468,6 @@
                         <p>📲 Mercado Pago</p>
                         <p>🏦 Transferencia Bancaria</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CENTRO DEL VOLANTE - LADO 1 -->
-    <div class="flyer-side">
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <h3>Pizzas</h3>
-                <div class="size-headers" style="grid-template-columns: 2.35fr 1fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
-                    <span></span><span>Grande</span><span>Chica</span><span>Indiv.</span>
-                </div>
-            </div>
-            <div class="menu-price-table" style="grid-template-columns: 2.35fr 1fr 1fr 1fr; margin-top: 10px;">
-                <span class="table-item-name">Muzzarella</span> <span class="table-price">$16500</span> <span class="table-price">$14700</span> <span class="table-price">$11400</span>
-                <span class="table-item-name">Fugazza Con Queso</span> <span class="table-price">$16500</span> <span class="table-price">$14700</span> <span class="table-price">$11400</span>
-                <span class="table-item-name">Jamon</span> <span class="table-price">$18300</span> <span class="table-price">$16300</span> <span class="table-price">$13200</span>
-                <span class="table-item-name">Jamon y Morrones</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
-                <span class="table-item-name">Jamon Crudo</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
-                <span class="table-item-name">Rucula y Parmesano</span> <span class="table-price">$21700</span> <span class="table-price">$18700</span> <span class="table-price">$15400</span>
-                <span class="table-item-name">Calabresa</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
-                <span class="table-item-name">Provolone</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
-                <span class="table-item-name">Roquefort</span> <span class="table-price">$20600</span> <span class="table-price">$18400</span> <span class="table-price">$15000</span>
-                <span class="table-item-name">Tres Quesos</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16700</span>
-                <span class="table-item-name">Margarita</span> <span class="table-price">$20200</span> <span class="table-price">$17900</span> <span class="table-price">$14700</span>
-                <span class="table-item-name">Napolitana</span> <span class="table-price">$20200</span> <span class="table-price">$17900</span> <span class="table-price">$14700</span>
-                <span class="table-item-name">Super Napolitana</span> <span class="table-price">$24000</span> <span class="table-price">$21300</span> <span class="table-price">$17400</span>
-                <span class="table-item-name">El Conde</span> <span class="table-price">$25400</span> <span class="table-price">$22300</span> <span class="table-price">$18100</span>
-                <span class="table-item-name">Palmito</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16700</span>
-                <span class="table-item-name">Criolla</span> <span class="table-price">$22700</span> <span class="table-price">$20200</span> <span class="table-price">$16500</span>
-                <span class="table-item-name">Champignones</span> <span class="table-price">$22700</span> <span class="table-price">$18300</span> <span class="table-price">$16500</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>Empanadas</h3>
-            <div class="menu-grid">
-                <div>
-                    <div class="menu-item"><span class="menu-item-name">Carne Suave</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Carne Picante</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Pollo</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Roquefort</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Cebolla y Queso</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Humita</span> <span class="menu-item-price">$2400</span></div>
-                </div>
-                <div>
-                    <div class="menu-item"><span class="menu-item-name">Verdura</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Capresse</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Jamon y Queso</span> <span class="menu-item-price">$2400</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Carne a Cuchillo<span class="menu-item-size">(Suave/Picante)</span></span> <span class="menu-item-price">$2600</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Fatay</span> <span class="menu-item-price">$2600</span></div>
-                    <div class="menu-item"><span class="menu-item-name">Pollo al Verdeo</span> <span class="menu-item-price">$2600</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CENTRO DEL VOLANTE - LADO 2 -->
-    <div class="flyer-side">
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <h3>Fugazzetas Rellenas</h3>
-                <div class="size-headers" style="grid-template-columns: 2.9fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
-                    <span></span><span>Grande</span><span>Chica</span>
-                </div>
-            </div>
-            <div class="menu-price-table" style="grid-template-columns: 2.9fr 1fr 1fr; margin-top: 10px;">
-                <span class="table-item-name">Clasica</span> <span class="table-price">$21200</span> <span class="table-price">$19700</span>
-                <span class="table-item-name">Con Jamon</span> <span class="table-price">$24000</span> <span class="table-price">$22300</span>
-                <span class="table-item-name">Con Jamon y Morrones</span> <span class="table-price">$25800</span> <span class="table-price">$24400</span>
-                <span class="table-item-name">Completa (+ Huevo)</span> <span class="table-price">$26900</span> <span class="table-price">$25400</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>Calzones</h3>
-            <div class="menu-grid">
-                <div class="menu-item"><span class="menu-item-name">Calzon Napolitano</span> <span class="menu-item-price">$25300</span></div>
-                <div class="menu-item"><span class="menu-item-name">Calzon Calabresa</span> <span class="menu-item-price">$25300</span></div>
-                <div class="menu-item"><span class="menu-item-name">Calzon Champignones</span> <span class="menu-item-price">$25300</span></div>
-                <div class="menu-item"><span class="menu-item-name">Calzon El Conde</span> <span class="menu-item-price">$27200</span></div>
-            </div>
-        </div>
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <h3>Sandwiches</h3>
-                <div class="size-headers" style="grid-template-columns: 2.7fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
-                    <span></span><span>20CM</span><span>30CM</span>
-                </div>
-            </div>
-            <div class="menu-price-table" style="grid-template-columns: 2.7fr 1fr 1fr; margin-top: 10px;">
-                <span class="table-item-name">Milanesa Carne / Pollo</span> <span class="table-price">$9800</span> <span class="table-price">$11800</span>
-                <span class="table-item-name">Churrasquito / Pollo Grille</span> <span class="table-price">$9800</span> <span class="table-price">$11800</span>
-                <span class="table-item-name">Completo <span class="agregado">(L,T,J,Q)</span></span> <span class="table-price">$11800</span> <span class="table-price">$13700</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <div class="menu-category-header">
-                <h3>Minutas</h3>
-                <div class="size-headers" style="grid-template-columns: 2.7fr 1fr 1fr; width: 100%; position: relative; left: -15px;">
-                    <span></span><span>Para 1</span><span>Para 2</span>
-                </div>
-            </div>
-            <div class="menu-price-table" style="grid-template-columns: 2.7fr 1fr 1fr; margin-top: 10px;">
-                <span class="table-item-name">Milanesa Sola <span class="agregado">(Carne/Pollo)</span></span> <span class="table-price">$14000</span> <span class="table-price">$18000</span>
-                <span class="table-item-name">Milanesa Napolitana</span> <span class="table-price">$17200</span> <span class="table-price">$22100</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>Hamburguesas</h3>
-            <div class="menu-item"><span class="menu-item-name">Hamburguesa Sola</span> <span class="menu-item-price">$7200</span></div>
-            <div class="menu-item"><span class="menu-item-name">Hamburguesa L y T / J y Q</span> <span class="menu-item-price">$8700</span></div>
-            <div class="menu-item"><span class="menu-item-name">Hamburguesa Completa</span> <span class="menu-item-price">$9500</span></div>
-            <div class="menu-item"><span class="menu-item-name">Adicionales</span> <span class="menu-item-price">$1300</span></div>
-        </div>
-        <div class="promo" style="margin-top: 20px;">
-            ¡Mirá todas las promos y nuestros productos en nuestra Web!
-            <strong><a href="https://elconde.lat/" target="_blank" style="color: #1a1a1a; text-decoration: none;">https://elconde.lat/</a></strong>
-        </div>
-    </div>
-
-    <!-- REVERSO DEL VOLANTE -->
-    <div class="flyer-side">
-        <h2>¡Pedí online fácil y rápido!</h2>
-        <p>Visita nuestro sitio para ver el menú completo, hacer tu pedido online, consultar promos vigentes y recibirlo en tu casa o retirarlo en el local.</p>
-
-        <div class="qr-section">
-            <h3>Escaneá el QR y disfruta de lo mejor del Condado
-            <div class="qr-code">
-                <!-- Aquí va tu imagen QR -->
-                <img src="qrticket.jpeg"Código QR para pedir online">
-            </div>
-        </div>
-
-        <div class="promo">
-            ¡Proximamente! Suma puntos Conde y Disfruta de nuestros veneficios.
-        </div>
-
-        <div class="section">
-            <h2>Nuestros destacados con mejores calificasiones</h2>
-            <div class="image-gallery">
-                <!-- Reemplaza con tus fotos -->
-                <div>
-                    <img src="milanesa-de-carne-completa.jpeg" alt="Foto de Milanesa">
-                </div>
-                <div>
-                    <img src="CRIOLLA.jpg" alt="Foto de empanadas">
-                </div>
-                <div>
-                    <img src="CALABRESSA.jpeg" alt="Foto de Pizza Calabressa">
-                </div>
-                <!-- Nuevas imágenes -->
-                <div>
-                    <img src="CHURRASQUITO.jpeg"Foto de producto 4">
-                </div>
-                <div>
-                    <img src="SUPER-NAPOLITANA.jpeg"Foto de producto 5">
-                </div>
-                <div>
-                    <img src="HAMBURGUESA COMPLETA.jpg"Foto de producto 6">
                 </div>
             </div>
         </div>
