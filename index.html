@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Conde – Pizzas y Empanadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Nunito', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: #000000; /* Fondo negro puro */
             color: #f0f0f0; /* Color de texto principal claro */
             line-height: 1.6;
@@ -14,7 +19,7 @@
             padding: 20px;
         }
         .flyer-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: auto;
             background: #111; /* Marco exterior muy oscuro */
             padding: 20px;
@@ -30,6 +35,7 @@
         }
         h1, h2, h3 {
             color: #FACC15; /* Color acento amarillo del logo */
+            font-family: 'Abhaya Libre', serif;
         }
         .header {
             border-bottom: 2px solid #444; /* Borde inferior más sutil */
@@ -51,7 +57,7 @@
             grid-template-columns: auto 1fr; /* Columna para el logo, columna para el título */
             align-items: center; /* Centra verticalmente logo y título */
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
         }
         .main-title-wrapper {
             display: flex;
@@ -64,17 +70,18 @@
             font-size: 4.5em; /* Tamaño grande y limpio */
             font-weight: bold;
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 20px;
         }
         .subtitle {
             font-size: 1.2em; /* Más grande para mejor visibilidad */
             font-weight: 600;
             color: #f0f0f0;
             margin: 0;
-            letter-spacing: 4px; /* Estiramos el texto */
+            letter-spacing: 15px; /* Estiramos el texto */
             text-transform: uppercase; /* Mayúsculas para estilo */
             width: 100%;
             text-align: center;
+            font-family: 'Bodoni Moda', serif;
         }
         strong {
             color: #FACC15; /* Resalta los textos importantes con el color de la marca */
@@ -159,16 +166,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 40px;
             align-items: center;
         }
         .platform-button {
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 1em;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
         .social-icons img {
@@ -211,17 +218,17 @@
 
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             justify-items: center;
             gap: 10px;
             margin-top: 20px;
         }
         .image-gallery img {
             width: 150px; /* Ancho fijo para las imágenes */
-            height: 120px; /* Alto fijo para las imágenes */
+            height: 150px; /* Alto fijo para las imágenes */
             object-fit: cover;
-            border-radius: 10px; /* Bordes bien redondeados */
-            border: 2px solid #444;
+            border-radius: 50%; /* Bordes redondos */
+            border: 2px solid #FACC15;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .image-gallery img:hover {
@@ -313,7 +320,7 @@
         /* --- Nuevos estilos para las promociones --- */
         .promo-item {
             background-color: #1a1a1a;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
             border: 1px solid #444;
             border-radius: 8px;
@@ -322,6 +329,7 @@
             color: #FACC15;
             margin-top: 0;
             margin-bottom: 10px;
+            font-size: 1.2em;
         }
         .promo-price {
             display: inline-block;
@@ -331,6 +339,81 @@
             padding: 8px 16px;
             border-radius: 30px; /* Bordes redondeados para efecto de botón/píldora */
             margin-top: 15px;
+        }
+        .menu-digital-section {
+            background-color: #000;
+            color: #FACC15;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .flyer-container {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .flyer-side {
+                padding: 15px;
+            }
+            .main-name {
+                font-size: 3em;
+            }
+            .subtitle {
+                font-size: 1em;
+                letter-spacing: 4px;
+            }
+            .specialties-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .promo-item {
+                padding: 8px;
+            }
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .image-gallery img {
+                width: 120px;
+                height: 120px;
+            }
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .divider-line {
+                display: none;
+            }
+            .delivery-icons {
+                gap: 15px;
+            }
+            .platform-button {
+                padding: 8px 14px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-name {
+                font-size: 2.5em;
+            }
+            .subtitle {
+                font-size: 0.9em;
+                letter-spacing: 2px;
+            }
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            .delivery-icons {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -347,7 +430,7 @@
                     <img src="Logo-Conde10.png" alt="Logo El Conde">
                 </div>
                 <div class="main-title-wrapper">
-                    <h1 class="main-name">El Conde</h1>
+                    <h1 class="main-name">EL&nbsp;&nbsp;CONDE</h1>
                     <p class="subtitle">Pizzas y Empanadas</p>
                 </div>
             </div>
@@ -356,6 +439,12 @@
         <div class="section">
             <h2>Nuestras Promociones</h2>
             <div class="specialties-grid">
+                <div class="promo-item">
+                    <h4>Pagando en efectivo</h4>
+                    <div style="font-size: 3em; color: #FACC15; text-align: center;">10%</div>
+                    <p style="text-align: center; color: #FACC15;">de descuento</p>
+                    <p style="text-align: center; font-size: 0.8em;">(Promocion solo valida en mostrador)</p>
+                </div>
                 <div class="promo-item">
                     <h4>PROMO 1</h4>
                     <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + 🥤Bebida 1.50L</p>
@@ -377,7 +466,7 @@
                     <div class="promo-price">$34400</div>
                 </div>
                 <div class="promo-item">
-                    <h4>PROMO 5</h4><p>Milanesa grande de Pollo o Carne a la Napolitana + Papas fritas grandes + Pan de pizza</p>
+                    <h4>PROMO 5</h4><p>Milanesa Grande de Pollo o Carne a la Napolitana + Papas fritas grandes + Pan </p>
                     <div class="promo-price">$24300</div>
                 </div>
                 <div class="promo-item">
@@ -437,13 +526,7 @@
                 </div>
                 <!-- Nuevas imágenes -->
                 <div>
-                    <img src="CHURRASQUITO.jpeg"Foto de producto 4">
-                </div>
-                <div>
-                    <img src="SUPER-NAPOLITANA.jpeg"Foto de producto 5">
-                </div>
-                <div>
-                    <img src="HAMBURGUESA COMPLETA.jpg"Foto de producto 6">
+                    <img src="CHURRASQUITO.jpeg" alt="Foto de producto 4">
                 </div>
             </div>
         </div>
@@ -472,8 +555,7 @@
             </div>
         </div>
         <div class="hours section">
-            <h3>Nuestros Horarios</h3>
-            <p>Miércoles a Lunes: <strong>19:30 a 23:45 hs</strong> (Martes cerrado)</p>
+            <p><strong>Nuestros Horarios:</strong> Miércoles a Lunes: 19:30 a 23:45 hs (Martes cerrado)</p>
             <div class="delivery-icons">
                 <a href="https://www.instagram.com/elconde.pizzas/" target="_blank" class="platform-button instagram-btn">Instagram</a>
                 <a href="https://www.facebook.com/elconde.pizzas" target="_blank" class="platform-button facebook-btn">Facebook</a>
