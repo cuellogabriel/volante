@@ -28,72 +28,98 @@
         }
         .flyer-side {
             background: #000000; /* AHORA SÍ: Fondo negro para el contenido del volante */
-            border: 2px solid #FACC15; /* Borde con el color de la marca para resaltar */
+            border: 2px solid #c9a92b; /* Borde con el color de la marca para resaltar */
             padding: 20px;
             margin-bottom: 30px;
             border-radius: 8px; /* Bordes redondeados para las secciones */
         }
         h1, h2, h3 {
-            color: #FACC15; /* Color acento amarillo del logo */
+            color: #c9a92b; /* Color acento amarillo del logo */
             font-family: 'Abhaya Libre', serif;
+        }
+        h2 {
+            font-size: 1.9em; /* Tamaño base para títulos de sección */
+            letter-spacing: 1px;
         }
         .header {
             border-bottom: 2px solid #444; /* Borde inferior más sutil */
             padding-bottom: 15px;
             margin-bottom: 20px;
         }
+        .title-container {
+            display: grid;
+            grid-template-columns: auto 1fr; /* Columna para el logo, columna para el título */
+            align-items: center; /* Centra verticalmente logo y título */
+            justify-content: center;
+            gap: 20px;
+        }
         .logo-placeholder {
-            width: 100px; /* Ajusta el tamaño según tu logo */
+            width: 100px;
             height: 100px;
-            flex-shrink: 0; /* Evita que el logo se encoja */
+            flex-shrink: 0;
         }
         .logo-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        .title-container {
-            display: grid;
-            grid-template-columns: auto 1fr; /* Columna para el logo, columna para el título */
-            align-items: center; /* Centra verticalmente logo y título */
+        .artistic-title {
+            display: flex;
+            align-items: center; /* Vuelve a centrar verticalmente */
             justify-content: center;
-            gap: 10px;
+            gap: 0; /* Eliminamos el gap para controlar el espacio manualmente */
         }
-        .main-title-wrapper {
+        .big-e {
+            font-family: 'Abhaya Libre', serif;
+            color: #c9a92b;
+            font-weight: 700;
+            font-size: 130px;
+            line-height: 1; /* Asegura que la altura de línea no añada espacio extra */
+        }
+        .middle-title {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            line-height: 1.1;
+            line-height: 1; 
+            position: relative;
+            bottom: 5px;
         }
-        .main-name {
-            font-size: 4.5em; /* Tamaño grande y limpio */
-            font-weight: bold;
-            margin: 0;
-            letter-spacing: 20px;
+        .middle-text {
+            font-family: 'Abhaya Libre', serif;
+            font-size: 3.5em;
+            font-weight: 600;
+            letter-spacing: 18px; /* Ajustamos el espaciado interno */
+            color: #c9a92b;
+            padding-left: 18px; /* Añade espacio a la izquierda de la 'L' */
         }
         .subtitle {
-            font-size: 1.2em; /* Más grande para mejor visibilidad */
-            font-weight: 600;
+            font-size: 1.1em;
+            font-weight: 500;
             color: #f0f0f0;
             margin: 0;
-            letter-spacing: 15px; /* Estiramos el texto */
+            letter-spacing: 4px;
             text-transform: uppercase; /* Mayúsculas para estilo */
-            width: 100%;
             text-align: center;
             font-family: 'Bodoni Moda', serif;
+            margin-top: 8px; /* Espacio sobre el subtítulo */
         }
         strong {
-            color: #FACC15; /* Resalta los textos importantes con el color de la marca */
+            color: #c9a92b; /* Resalta los textos importantes con el color de la marca */
         }
         .promo {
-            background-color: #FACC15;
+            background-color: #c9a92b;
             color: #1a1a1a; /* Texto oscuro para que contraste con el fondo naranja */
             text-align: center;
             padding: 15px;
             font-size: 1.3em;
             font-weight: bold;
             border-radius: 5px;
+        }
+        .promo h2 {
+            color: #1a1a1a; /* Texto oscuro para el h2 dentro de la promo */
+            margin-bottom: 0; /* Quitar margen inferior del h2 */
+            padding: 0;
+            font-size: 2.5em; /* Aumentado para mayor impacto */
         }
         .section {
             margin-bottom: 25px;
@@ -111,7 +137,7 @@
         .specialty-item {
             background-color: #1a1a1a;
             padding: 15px;
-            /* border-left: 3px solid #FACC15; */ /* Reemplazado por el nuevo estilo de promo */
+            /* border-left: 3px solid #c9a92b; */ /* Reemplazado por el nuevo estilo de promo */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -119,7 +145,7 @@
 
         .specialty-item h4 {
             margin: 0 0 10px 0;
-            color: #FACC15;
+            color: #c9a92b;
             font-size: 1.1em;
         }
         .specialty-item p {
@@ -187,6 +213,11 @@
         .social-icons a:hover img {
             transform: scale(1.1);
         }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .platform-button:hover {
             transform: scale(1.05);
             opacity: 0.9;
@@ -200,13 +231,19 @@
             margin: 4px 0;
             font-size: 1.1em;
         }
+        .bbva-promo {
+            font-size: 0.9em;
+            color: #f0f0f0;
+            margin-top: 15px;
+            font-weight: bold;
+        }
         .qr-section {
             text-align: center;
         }
         .qr-code {
-            width: 180px;
-            height: 180px;
-            margin: 10px auto;
+            width: 200px; /* Agrandado ligeramente */
+            height: 200px; /* Agrandado ligeramente */
+            margin: 15px auto 10px auto; /* Ajuste de margen */
         }
         .qr-code img {
             width: 100%;
@@ -218,7 +255,7 @@
 
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             justify-items: center;
             gap: 10px;
             margin-top: 20px;
@@ -228,12 +265,12 @@
             height: 150px; /* Alto fijo para las imágenes */
             object-fit: cover;
             border-radius: 50%; /* Bordes redondos */
-            border: 2px solid #FACC15;
+            border: 2px solid #c9a92b;
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .image-gallery img:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(250, 204, 21, 0.5);
+            box-shadow: 0 0 15px rgba(201, 169, 43, 0.5);
         }
         .flyer-side h2 {
             text-align: center;
@@ -244,7 +281,7 @@
             margin-bottom: 20px;
         }
         .menu-category h3 {
-            color: #FACC15;
+            color: #c9a92b;
             border-bottom: 1px solid #444;
             padding-bottom: 5px;
             margin-bottom: 10px;
@@ -265,7 +302,7 @@
             display: grid;
             gap: 4px 10px;
             font-weight: bold;
-            color: #FACC15;
+            color: #c9a92b;
             text-align: right; /* Alinea los títulos de tamaño a la derecha de su celda */
         }
         .menu-grid {
@@ -287,7 +324,7 @@
         }
         .menu-item-price {
             font-weight: bold;
-            color: #FACC15;
+            color: #c9a92b;
             white-space: nowrap;
         }
         .menu-item-size {
@@ -326,15 +363,15 @@
             border-radius: 8px;
         }
         .promo-item h4 {
-            color: #FACC15;
+            color: #c9a92b;
             margin-top: 0;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.4em; /* Agrandado */
         }
         .promo-price {
             display: inline-block;
-            border: 2px solid #FACC15;
-            color: #FACC15;
+            border: 2px solid #c9a92b;
+            color: #c9a92b;
             font-weight: bold;
             padding: 8px 16px;
             border-radius: 30px; /* Bordes redondeados para efecto de botón/píldora */
@@ -342,7 +379,7 @@
         }
         .menu-digital-section {
             background-color: #000;
-            color: #FACC15;
+            color: #c9a92b;
             text-align: center;
             padding: 10px;
             margin-bottom: 10px;
@@ -361,8 +398,22 @@
             .flyer-side {
                 padding: 15px;
             }
-            .main-name {
-                font-size: 3em;
+            .title-container {
+                grid-template-columns: 1fr; /* El logo y el título se apilan */
+                gap: 10px;
+                justify-items: center;
+            }
+            .logo-placeholder {
+                width: 80px;
+                height: 80px;
+            }
+            .big-e {
+                font-size: 80px; /* Reducido para móviles */
+            }
+            .middle-text {
+                font-size: 2.5em; /* Reducido para móviles */
+                letter-spacing: 8px;
+                padding-top: 5px;
             }
             .subtitle {
                 font-size: 1em;
@@ -371,13 +422,6 @@
             .specialties-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
-            }
-            .promo-item {
-                padding: 8px;
-            }
-            .image-gallery {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
             }
             .image-gallery img {
                 width: 120px;
@@ -393,6 +437,21 @@
             .delivery-icons {
                 gap: 15px;
             }
+            .promo-item {
+                padding: 8px;
+            }
+            .promo-item img {
+                height: 180px; /* Altura reducida para móviles */
+            }
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .divider-line {
+                display: none;
+            }
+
+
             .platform-button {
                 padding: 8px 14px;
                 font-size: 0.9em;
@@ -400,8 +459,12 @@
         }
 
         @media (max-width: 480px) {
-            .main-name {
-                font-size: 2.5em;
+            .big-e {
+                font-size: 60px;
+            }
+            .middle-text {
+                font-size: 1.8em;
+                letter-spacing: 5px;
             }
             .subtitle {
                 font-size: 0.9em;
@@ -414,6 +477,13 @@
                 flex-direction: column;
                 gap: 10px;
             }
+        }
+        .promo-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 15px; /* Espacio entre el texto y la imagen */
         }
     </style>
 </head>
@@ -429,9 +499,13 @@
                 <div class="logo-placeholder">
                     <img src="Logo-Conde10.png" alt="Logo El Conde">
                 </div>
-                <div class="main-title-wrapper">
-                    <h1 class="main-name">EL&nbsp;&nbsp;CONDE</h1>
-                    <p class="subtitle">Pizzas y Empanadas</p>
+                <div class="artistic-title">
+                    <span class="big-e">E</span>
+                    <div class="middle-title">
+                        <span class="middle-text">L COND</span>
+                        <p class="subtitle">Pizzas y Empanadas</p>
+                    </div>
+                    <span class="big-e">E</span>
                 </div>
             </div>
         </header>
@@ -440,79 +514,44 @@
             <h2>Nuestras Promociones</h2>
             <div class="specialties-grid">
                 <div class="promo-item">
-                    <h4>Pagando en efectivo</h4>
-                    <div style="font-size: 3em; color: #FACC15; text-align: center;">10%</div>
-                    <p style="text-align: center; color: #FACC15;">de descuento</p>
-                    <p style="text-align: center; font-size: 0.8em;">(Promocion solo valida en mostrador)</p>
-                </div>
-                <div class="promo-item">
-                    <h4>PROMO 1</h4>
-                    <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + 🥤Bebida 1.50L</p>
-                    <div class="promo-price">$26500</div>
-                </div>
-                <div class="promo-item">
                     <h4>PROMO 2</h4>
-                    <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + Bebida 1.50L</p>
-                    <div class="promo-price">$31000</div>
-                </div>
-                <div class="promo-item">
-                    <h4>PROMO 3</h4>
-                    <p>Pizza Grande Muzzarella + Pizza Chica De Fugazza con Queso + Bebida de 1.50L</p>
-                    <div class="promo-price">$31700</div>
-                </div>
-                <div class="promo-item">
-                    <h4>PROMO 4</h4>
-                    <p>Pizza Grande de Napo o Jamón + 4 Empanadas + 2 Fainá + Bebida 1.50L</p>
-                    <div class="promo-price">$34400</div>
+                    <p>Pizza Grande Muzzarella + 4 Empanadas + 2 Fainá + Bebida Grande (1.25L - 1.50L)</p>
+                    <img src="MUZZARELLA2.jpeg" alt="Foto de Pizza Muzzarella">
                 </div>
                 <div class="promo-item">
                     <h4>PROMO 5</h4><p>Milanesa Grande de Pollo o Carne a la Napolitana + Papas fritas grandes + Pan </p>
-                    <div class="promo-price">$24300</div>
-                </div>
-                <div class="promo-item">
-                    <h4>PROMO 6</h4>
-                    <p>2 Sandwiches completos de 20cm + Papas fritas grandes</p>
-                    <div class="promo-price">$28200</div>
+                    <img src="milanesa-de-carne-completa.jpeg" alt="Foto de Milanesa a la Napolitana">
                 </div>
                 <div class="promo-item">
                     <h4>PROMO 7</h4>
-                    <p>2 Hamburguesas completas + Papas fritas grandes</p>
-                    <div class="promo-price">$20200</div>
-                </div>
-                <div class="promo-item">
-                    <h4>DOCENA</h4>
-                    <p>12 Empanadas Tradicionales</p>
-                    <p class="promo-details">(gustos especiales + $200 c/u)</p>
-                    <div class="promo-price">$26400</div>
+                    <p>2 Hamburguezas de 200Gr completas + Papas fritas grandes</p>
+                    <img src="CHURRASQUITO.jpeg" alt="Foto de Sandwich">
                 </div>
             </div>
+            <p style="text-align: center; font-weight: bold; color: #c9a92b; font-size: 1.2em; margin-top: 25px;">Consultar promoción exclusiva del Banco BBVA</p>
         </div>
 
-        <div class="promo" style="margin-top: 20px;">
-            ¡Mirá todas las promos y nuestros productos en nuestra Web!<br>
-            <strong><a href="https://elconde.lat/" target="_blank" style="color: #1a1a1a; text-decoration: none;">https://elconde.lat/</a></strong>
+        <div class="promo" style="margin-top: 20px; padding-bottom: 0;">
+            ¡Mirá el Menú completo escaneando el QR en nuestra Web!
+        </div>
+        <div class="qr-section" style="background: #000000; padding: 20px 0;">
+            <div class="qr-code">
+                <img src="qrticket.jpeg" alt="Código QR para ver el menú online">
+            </div>
+            <p style="margin-top: 25px; font-size: 1.4em;"><strong><a href="https://elconde.netlify.app/" target="_blank" style="color: #c9a92b; text-decoration: none;">https://elconde.netlify.app/</a></strong></p>
         </div>
     </div>
 
     <!-- REVERSO DEL VOLANTE -->
     <div class="flyer-side">
-        <h2 style="font-size: 1.6em;">¡Pedí online fácil y rápido!</h2>
-        <p>Visita nuestro sitio para ver el menú completo, hacer tu pedido online, consultar promos vigentes y recibirlo en tu casa o retirarlo en el local.</p>
-
-        <div class="qr-section">
-            <h3>Escaneá el QR y disfruta de lo mejor del Condado
-            <div class="qr-code">
-                <!-- Aquí va tu imagen QR -->
-                <img src="qrticket.jpeg"Código QR para pedir online">
-            </div>
-        </div>
-
-        <div class="promo">
-            ¡Proximamente! Suma puntos Conde y Disfruta de nuestros veneficios.
+        <div style="text-align: center; margin-bottom: 25px;">
+            <h2 style="font-size: 2.2em; margin-bottom: 5px;">El Conde - Desde 1994</h2>
+            <p style="font-size: 1.3em; color: #f0f0f0; margin-top: 0; font-family: 'Bodoni Moda', serif;">El mejor sabor de Pizza a la piedra y empanadas al horno artesanales</p>
         </div>
 
         <div class="section">
-            <h2>Destacados Con Mejor Calificasion</h2>
+            <h2 class="promo">Lo más destacado por las reseñas</h2>
+            <p style="text-align: center; margin-top: -10px; margin-bottom: 20px; font-size: 1.2em;">Encontranos en Google como <strong>"El Conde Pizzas Y Empanadas"</strong> y mirá nuestras excelentes calificaciones.</p>
             <div class="image-gallery">
                 <!-- Reemplaza con tus fotos -->
                 <div>
@@ -524,9 +563,14 @@
                 <div>
                     <img src="CALABRESSA.jpeg" alt="Foto de Pizza Calabressa">
                 </div>
-                <!-- Nuevas imágenes -->
                 <div>
-                    <img src="CHURRASQUITO.jpeg" alt="Foto de producto 4">
+                    <img src="CHURRASQUITO.jpeg" alt="Foto de Churrasquito">
+                </div>
+                <div>
+                    <img src="MUZZARELLA2.jpeg" alt="Foto de Pizza Muzzarella">
+                </div>
+                <div>
+                    <img src="milanesa-de-carne-completa.jpeg" alt="Foto de Milanesa Completa">
                 </div>
             </div>
         </div>
@@ -535,7 +579,7 @@
                 <div class="contact-col">
                     <h3>Contacto y Dirección</h3>
                     <!-- Icono de ubicación SVG incrustado -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#FACC15" style="margin-bottom: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="#c9a92b" style="margin-bottom: 5px;">
                         <path d="M12 2C7.589 2 4 5.589 4 10c0 6.5 8 12 8 12s8-5.5 8-12c0-4.411-3.589-8-8-8zm0 12c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
                     </svg>
                     <p style="margin-top: 0;">Gral Lucio N. Mansilla 2782</p>
@@ -550,6 +594,7 @@
                         <p>💳 Tarjetas de Crédito y Débito</p>
                         <p>📲 Mercado Pago</p>
                         <p>🏦 Transferencia Bancaria</p>
+                        <p class="bbva-promo">⭐ Consulta promoción exclusiva Banco BBVA</p>
                     </div>
                 </div>
             </div>
@@ -557,10 +602,22 @@
         <div class="hours section">
             <p><strong>Nuestros Horarios:</strong> Miércoles a Lunes: 19:30 a 23:45 hs (Martes cerrado)</p>
             <div class="delivery-icons">
-                <a href="https://www.instagram.com/elconde.pizzas/" target="_blank" class="platform-button instagram-btn">Instagram</a>
-                <a href="https://www.facebook.com/elconde.pizzas" target="_blank" class="platform-button facebook-btn">Facebook</a>
-                <a href="#" target="_blank" class="platform-button rappi-btn">Rappi</a>
-                <a href="#" target="_blank" class="platform-button pedidosya-btn">PedidosYa</a>
+                <a href="https://www.instagram.com/elconde.pizzas/" target="_blank" class="platform-button instagram-btn social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:20px; height:20px; margin-right:0; border-radius: 4px;">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.facebook.com/elconde.pizzas" target="_blank" class="platform-button facebook-btn social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:20px; height:20px; margin-right:0; border-radius: 4px;">
+                    <span>Facebook</span>
+                </a>
+                <a href="#" target="_blank" class="platform-button rappi-btn social-link">
+                    <img src="https://cdn.worldvectorlogo.com/logos/rappi-1.svg" alt="Rappi" style="width:20px; height:20px; margin-right:0; border-radius: 4px;">
+                    <span>Rappi</span>
+                </a>
+                <a href="#" target="_blank" class="platform-button pedidosya-btn social-link">
+                    <img src="https://cdn.worldvectorlogo.com/logos/pedidosya.svg" alt="PedidosYa" style="width:20px; height:20px; margin-right:0; border-radius: 4px;">
+                    <span>PedidosYa</span>
+                </a>
             </div>
         </div>
     </div>
